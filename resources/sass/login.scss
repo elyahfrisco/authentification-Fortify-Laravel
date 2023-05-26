@@ -1,0 +1,75 @@
+@import 'mixins';
+@import 'variables';
+
+section.bloc-logo {
+    @include flex_all_center();
+}
+
+section.bloc-main-connexion {
+    @include linearGradient();
+    padding: 70px;
+
+    .container {
+        @include flex_column();
+        padding: 134px 50px 134px 50px;
+        background-color: $white-color;
+        height: auto;
+        border-radius: 20px;
+        gap: 25px;
+
+        &.form-register {
+            padding: 77px 50px 77px 50px;
+        }
+
+        .accountNok {
+            color: $blue-color;
+            font-weight: 700;
+        }
+
+        button {
+            @include shadowBtn();
+            text-transform: inherit;
+            font-size: 23px;
+        }
+
+        a {
+
+            &.btn-success {
+                @include shadowBtn();
+                text-transform: inherit;
+                font-size: 23px;
+            }
+        }
+
+        p {
+            a {
+                color: $gray-color;
+                text-decoration: underline;
+            }
+        }
+
+        .typeAcount {
+            gap: 15px;
+
+            .custom {
+                label {
+                    @include shadowBtn();
+                    width: 350px;
+                    font-size: 18px;
+                    color: $blue-color;
+                    font-weight: 900;
+                    text-transform: capitalize;
+                }
+            }
+        }
+
+        .form-check {
+            label {
+                span {
+                    color: $black-color;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

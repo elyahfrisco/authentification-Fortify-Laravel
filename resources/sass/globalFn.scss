@@ -1,0 +1,50 @@
+@import 'variables';
+@import 'mixins';
+
+.btn-success {
+    background-color: $green-color !important;
+}
+
+.btn-primary {
+    background-color: $blue-color !important;
+}
+
+.loader {
+    @include flex_all_center();
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: opacity 0.75s, visibility 0.75s;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    background-color: rgb(0 0 0 / 50%);
+
+    &:after {
+        content: "";
+        width: 150px;
+        height: 150px;
+        border: 20px solid $white-color;
+        border-top-color: $blue-color;
+        border-radius: 50%;
+        animation: loading 0.75s ease infinite;
+        z-index: 100;
+        position: absolute;
+    }
+}
+
+.loader--hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
